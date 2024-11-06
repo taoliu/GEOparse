@@ -398,7 +398,7 @@ def parse_table_data(lines):
         [i.rstrip() for i in lines if not i.startswith(("^", "!", "#")) and i.rstrip()]
     )
     if data:
-        return read_csv(StringIO(data), index_col=None, sep="\t")
+        return read_csv(StringIO(data), index_col=None, sep="\t", low_memory=False)
     else:
         return DataFrame()
 
